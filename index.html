@@ -4,115 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SORPRESA PARA LA NIÑA MÁS LINDA/title>
-    <style>
-        body {
-            background-color: beige;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            flex-direction: column;
-        }
-
-        .flower, .heart {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            margin: 20px;
-            animation: fadeIn 1s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        /* Animación para la flor */
-        .flower .petal {
-            width: 50px;
-            height: 80px;
-            background-color: pink;
-            border-radius: 50%;
-            position: absolute;
-            transform-origin: bottom;
-            opacity: 0;
-            animation: grow 1s ease-out forwards;
-        }
-
-        .flower .petal:nth-child(1) { transform: rotate(0deg) translateY(-30px); animation-delay: 0.1s; }
-        .flower .petal:nth-child(2) { transform: rotate(60deg) translateY(-30px); animation-delay: 0.2s; }
-        .flower .petal:nth-child(3) { transform: rotate(120deg) translateY(-30px); animation-delay: 0.3s; }
-        .flower .petal:nth-child(4) { transform: rotate(180deg) translateY(-30px); animation-delay: 0.4s; }
-        .flower .petal:nth-child(5) { transform: rotate(240deg) translateY(-30px); animation-delay: 0.5s; }
-        .flower .petal:nth-child(6) { transform: rotate(300deg) translateY(-30px); animation-delay: 0.6s; }
-
-        .flower .center {
-            width: 40px;
-            height: 40px;
-            background-color: yellow;
-            border-radius: 50%;
-            position: absolute;
-            opacity: 0;
-            animation: fadeIn 1s ease-out forwards;
-            animation-delay: 0.7s;
-        }
-
-        @keyframes grow {
-            from { opacity: 0; transform: scale(0) translateY(-30px); }
-            to { opacity: 1; transform: scale(1) translateY(-30px); }
-        }
-
-        /* Animación para el corazón */
-        .heart {
-            width: 100px;
-            height: 160px;
-            position: relative;
-            animation: expandHeart 1s ease-out forwards;
-            animation-delay: 1s;
-        }
-
-        @keyframes expandHeart {
-            from { transform: scale(0); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .heart:before,
-        .heart:after {
-            content: "";
-            width: 100px;
-            height: 160px;
-            background-color: pink;
-            border-radius: 100px 100px 0 0;
-            position: absolute;
-            top: 0;
-            left: 50px;
-            transform: rotate(-45deg);
-            transform-origin: 0 100%;
-        }
-
-        .heart:after {
-            left: 0;
-            transform: rotate(45deg);
-            transform-origin: 100% 100%;
-        }
-    </style>
 </head>
 <body>
-
-    <div class="flower">
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="center"></div>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="2871482820979272488" data-share-method="host" data-aspect-ratio="1.28351" data-width="100%"><a href="https://tenor.com/view/mochi-pet-mochi-cat-cute-squiddy-gif-2871482820979272488">Mochi Pet GIF</a>from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <h1>¿Te gustaria salir conmigo? 🥰</h1>
+        <p>Eres la persona mas especial del mundo</p>
+        <div class="btn">
+            <a href="si.html">SI</a>
+            <a href="no1.html">NO</a>
+        </div>
     </div>
-
-    <div class="heart"></div>
-
 </body>
 </html>
