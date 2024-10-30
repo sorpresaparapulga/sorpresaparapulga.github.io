@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flor y Corazón</title>
+    <style>
+        body {
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+
+        .flower, .heart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: 20px;
+        }
+
+        /* Estilos para la flor */
+        .flower .petal {
+            width: 50px;
+            height: 80px;
+            background-color: pink;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .flower .petal:nth-child(1) { transform: rotate(0deg) translateY(-30px); }
+        .flower .petal:nth-child(2) { transform: rotate(60deg) translateY(-30px); }
+        .flower .petal:nth-child(3) { transform: rotate(120deg) translateY(-30px); }
+        .flower .petal:nth-child(4) { transform: rotate(180deg) translateY(-30px); }
+        .flower .petal:nth-child(5) { transform: rotate(240deg) translateY(-30px); }
+        .flower .petal:nth-child(6) { transform: rotate(300deg) translateY(-30px); }
+
+        .flower .center {
+            width: 40px;
+            height: 40px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        /* Estilos para el corazón */
+        .heart:before,
+        .heart:after {
+            content: "";
+            width: 100px;
+            height: 160px;
+            background-color: pink;
+            border-radius: 100px 100px 0 0;
+            position: absolute;
+            top: 0;
+            left: 50px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flower">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+    </div>
+
+    <div class="heart"></div>
+
+</body>
+</html>
