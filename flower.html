@@ -3,119 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animación de Corazón con Curita</title>
+    <title>Animación de Corazones y Flor</title>
     <style>
         body {
+            margin: 0;
+            overflow: hidden;
+            background-color: beige;
+            font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: beige;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .container {
-            position: relative;
-            text-align: center;
-            animation: showMessage 10s ease-in-out forwards;
+            flex-direction: column;
         }
 
         .heart {
-            width: 100px;
-            height: 100px;
+            position: absolute;
+            width: 50px;
+            height: 50px;
             background-color: red;
-            position: relative;
             transform: rotate(-45deg);
-            animation: pulse 1s infinite;
+            border-radius: 50% 50% 0 0;
+            animation: fall 4s linear infinite, fadeOut 4s linear forwards 2s;
         }
 
         .heart::before, .heart::after {
             content: "";
-            width: 100px;
-            height: 100px;
+            position: absolute;
+            width: 50px;
+            height: 50px;
             background-color: red;
             border-radius: 50%;
-            position: absolute;
         }
 
         .heart::before {
-            top: -50px;
+            top: -25px;
             left: 0;
         }
 
         .heart::after {
-            left: 50px;
             top: 0;
+            left: 25px;
         }
 
-        .bandage {
-            width: 60px;
-            height: 20px;
-            background-color: #ffd700;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 5px;
-            opacity: 0;
-            animation: appear 1s ease-in-out forwards 2s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            color: #333;
+        .flower {
+            display: none;
+            animation: appear 2s ease-in-out forwards;
         }
 
         .message {
-            margin-top: 20px;
-            font-size: 20px;
-            color: #333;
             display: none;
-            opacity: 0;
-            animation: showMessage 2s ease-in-out forwards 5s;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            animation: showMessage 2s ease-in-out forwards 6s;
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1) rotate(-45deg);
+        @keyframes fall {
+            0% {
+                top: -50px;
+                left: calc(100% * var(--i) / 10);
+                opacity: 1;
             }
-            50% {
-                transform: scale(1.1) rotate(-45deg);
+            100% {
+                top: 100vh;
+                left: calc(100% * var(--i) / 10);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
             }
         }
 
         @keyframes appear {
             from {
                 opacity: 0;
-                transform: translate(-50%, -50%) scale(0);
             }
             to {
                 opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
+                display: block;
             }
         }
 
         @keyframes showMessage {
-            0% { opacity: 0; }
-            100% { opacity: 1; display: block; }
+            0% {
+                opacity: 0;
+                display: none;
+            }
+            100% {
+                opacity: 1;
+                display: block;
+            }
         }
 
-        .animated-text {
-            display: inline-block;
-            animation: fadeIn 3s ease-in-out forwards;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="heart"></div>
-        <div class="bandage animated-text">TQM</div>
-        <div class="message animated-text">TE QUIERO MUCHO<br>SIEMPRE VOY A ESTAR PARA TI<br>NO ESTÁS SOLA</div>
+    <div class="hearts">
+        <div class="heart" style="--i:0;"></div>
+        <div class="heart" style="--i:1;"></div>
+        <div class="heart" style="--i:2;"></div>
+        <div class="heart" style="--i:3;"></div>
+        <div class="heart" style="--i:4;"></div>
+        <div class="heart" style="--i:5;"></div>
+        <div class="heart" style="--i:6;"></div>
+        <div class="heart" style="--i:7;"></div>
+        <div class="heart" style="--i:8;"></div>
+        <div class="heart" style="--i:9;"></div>
     </div>
+    <div class="flower" id="flower">
+        🌸
+    </div>
+    <div class="message">
+        TE QUIERO MUCHO<br>NO ESTÁS SOLO<br>SIEMPRE VOY A ESTAR PARA TI
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('flower').style.display = 'block';
+        }, 4000);
+    </script>
 </body>
 </html>
