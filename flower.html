@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animación de Corazón</title>
+    <title>Animación de Corazón con Curita</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: beige;
             font-family: 'Arial', sans-serif;
         }
 
         .container {
             position: relative;
             text-align: center;
-            animation: showMessage 5s ease-in-out forwards;
+            animation: showMessage 10s ease-in-out forwards;
         }
 
         .heart {
@@ -57,8 +57,13 @@
             left: 50%;
             transform: translate(-50%, -50%);
             border-radius: 5px;
-            display: none;
+            opacity: 0;
             animation: appear 1s ease-in-out forwards 2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
         }
 
         .message {
@@ -66,6 +71,8 @@
             font-size: 20px;
             color: #333;
             display: none;
+            opacity: 0;
+            animation: showMessage 2s ease-in-out forwards 5s;
         }
 
         @keyframes pulse {
@@ -93,18 +100,22 @@
             100% { opacity: 1; display: block; }
         }
 
-        .bandage + .message {
-            display: block;
-            opacity: 0;
-            animation: showMessage 2s ease-in-out forwards 3s;
+        .animated-text {
+            display: inline-block;
+            animation: fadeIn 3s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="heart"></div>
-        <div class="bandage"></div>
-        <div class="message">TE QUIERO MUCHO<br>SIEMPRE VOY A ESTAR PARA TI<br>NO ESTÁS SOLA</div>
+        <div class="bandage animated-text">TQM</div>
+        <div class="message animated-text">TE QUIERO MUCHO<br>SIEMPRE VOY A ESTAR PARA TI<br>NO ESTÁS SOLA</div>
     </div>
 </body>
 </html>
